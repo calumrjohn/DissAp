@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ec125038df98fff1f58dc489732d079e",
+    "entities": [
+      {
+        "tableName": "Hunt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`huntId` INTEGER PRIMARY KEY AUTOINCREMENT, `names` TEXT NOT NULL, `hints` TEXT NOT NULL, `infos` TEXT NOT NULL, `lats` TEXT NOT NULL, `longs` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "huntId",
+            "columnName": "huntId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "names",
+            "columnName": "names",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hints",
+            "columnName": "hints",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "infos",
+            "columnName": "infos",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lats",
+            "columnName": "lats",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longs",
+            "columnName": "longs",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "huntId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ec125038df98fff1f58dc489732d079e')"
+    ]
+  }
+}
